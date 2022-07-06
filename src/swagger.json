@@ -1,0 +1,50 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "SOLID Introduction Documentation",
+    "description": "This is an API Test",
+    "version": "1.0.0",
+    "contact": {
+      "email": "thiagotatico007@gmail.com",
+      "url": "https://www.linkedin.com/in/thiago-tatico/"
+    }
+  },
+  "paths": {
+    "/users": {
+      "post": {
+        "tags": ["Users"] ,
+        "summary": "Create a new User",
+        "description": "Create a new User",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": "category name sample",
+                  "email": "test@gmail.com"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "User already exists"
+          }
+        }
+      }
+    }
+  }
+}
